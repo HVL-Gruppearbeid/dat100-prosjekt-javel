@@ -24,5 +24,25 @@ public class DayMain {
          Remember to also to check that you get the expected results
          */
 
+        //Test for printPowerPrices
+        DailyPower.printPowerPrices(powerprices_day);
+        System.out.println();
+
+        //Test for printPowerUsage
+        DailyPower.printPowerUsage(powerusage_day);
+        System.out.println();
+
+        //Test for computePowerUsage
+        System.out.println(DailyPower.computePowerUsage(powerusage_day));
+
+        //Test for computeSpotPrice
+        System.out.println(DailyPower.computeSpotPrice(powerusage_day, powerprices_day));
+
+        //Test for getSupport
+        System.out.println(DailyPower.getSupport(0.7, 2.12));
+
+
+
+
     }
 }
