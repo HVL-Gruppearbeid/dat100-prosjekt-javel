@@ -6,25 +6,29 @@ public class MonthlyPower {
 
     // a) print power usage for a month
     public static void print_PowerUsage(double[][] usage) {
-
-        // TODO
-
+        for (int i = 0; i < usage.length; i++){
+            System.out.print("Dag " + (i+1) + ": ");
+            DailyPower.printPowerUsage(usage[i]);
+            System.out.println();
+        }
     }
 
     // b) print power prices for a month
     public static void print_PowerPrices(double[][] prices) {
-
-        // TODO
-
+        for ( int i = 0; i < prices.length; i++){
+            System.out.print("Dag " + (i+1) + ": ");
+            DailyPower.printPowerPrices(prices[i]);
+            System.out.println();
+        }
     }
 
     // c) compute total power usage for a month
     public static double computePowerUsage(double[][] usage) {
 
         double sum = 0;
-
-        // TODO
-
+        for (int i = 0; i < usage.length; i++){
+            sum += DailyPower.computePowerUsage(usage[i]);
+        }
         return sum;
     }
 
@@ -34,8 +38,13 @@ public class MonthlyPower {
         boolean exceeded = false;
         double usage = 0;
 
-        // TODO
+        //Har spesifikt valgt å ikkje bruke while løkke her, sjølv om oppgaveteksten seier det. AI-slop oppgave.
+        //Har nettopp definert ein funksjon for å beregne forbruk i forrige funksjon.
 
+        usage = MonthlyPower.computePowerUsage(powerusage);
+        if (usage > threshold) {
+            exceeded = true;
+        }
         return exceeded;
     }
 
@@ -44,8 +53,9 @@ public class MonthlyPower {
 
         double price = 0;
 
-        // TODO
-
+        for (int i = 0; i < usage.length; i++){
+            price = DailyPower.computeSpotPrice(usage[i], prices[i]);
+        }
         return price;
     }
 

@@ -33,15 +33,25 @@ public class DayMain {
         System.out.println();
 
         //Test for computePowerUsage
-        System.out.println(DailyPower.computePowerUsage(powerusage_day));
+        System.out.println("Summer strømforbruk for en dag: " + DailyPower.computePowerUsage(powerusage_day) + " kWh");
 
         //Test for computeSpotPrice
-        System.out.println(DailyPower.computeSpotPrice(powerusage_day, powerprices_day));
+        System.out.println("Spotpris: " + DailyPower.computeSpotPrice(powerusage_day, powerprices_day) + " NOK");
 
         //Test for getSupport
-        System.out.println(DailyPower.getSupport(0.7, 2.12));
+        System.out.println("Støtte for en gitt time: " + DailyPower.getSupport(0.7, 2.12) + " NOK");
 
+        //Test for computePowerSupport
+        System.out.println("Støtte for en gitt dag: " + DailyPower.computePowerSupport(powerusage_day, powerprices_day) + " NOK");
 
+        //Test for computeNorgesPrice
+        System.out.println("Norgespris med forbruk for en dag: " + DailyPower.computeNorgesPrice(powerusage_day) + " NOK");
+
+        //Test for findPeakUsage
+        System.out.println("Høyeste forbruk på en time i løpet av en dag: " + DailyPower.findPeakUsage(powerusage_day) + " kWh");
+
+        //Test for findAvgPower
+        System.out.println("Gjennomsnitt av strømforbruket for en dag: " + DailyPower.findAvgPower(powerusage_day) + " kWh");
 
 
     }
