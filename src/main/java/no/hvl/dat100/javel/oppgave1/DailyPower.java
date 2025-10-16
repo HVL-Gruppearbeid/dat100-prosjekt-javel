@@ -74,7 +74,7 @@ public class DailyPower {
 
         double price = 0;
         for (int i = 0; i < usage.length; i++){
-            price += usage[i] * 0.5;
+            price += usage[i] * NORGESPRIS_KWH;
         }
         return price;
     }

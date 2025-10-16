@@ -34,5 +34,11 @@ public class MonthMain {
         //Test for computeSpotPrice
         System.out.println("Spotpris: " + MonthlyPower.computeSpotPrice(power_usage_month, power_prices_month) + " NOK");
 
+        //Test for computePowerSupport
+        System.out.println("Støtte for en gitt måned: " + MonthlyPower.computePowerSupport(power_usage_month, power_prices_month) + " NOK");
+
+        //Test for computeNorgesPrice
+        System.out.println("Norgespris med forbruk for en måned: " + MonthlyPower.computeNorgesPrice(power_usage_month) + " NOK");
+
     }
 }
