@@ -1,6 +1,7 @@
 package no.hvl.dat100.javel.oppgave1;
 
-import no.hvl.dat100.javel.oppgave2.MonthlyPower;
+
+import static no.hvl.dat100.javel.oppgave1.DailyPower.*;
 
 public class DayMain {
 
@@ -15,6 +16,44 @@ public class DayMain {
         System.out.println("OPPGAVE 1");
         System.out.println("==============");
         System.out.println();
+
+       // Oppgave 1
+        printPowerPrices(powerprices_day);
+
+        // Oppgave 2
+        DailyPower.printPowerUsage(powerusage_day);
+
+        // Oppgave 3
+        System.out.println(computePowerUsage(powerusage_day));
+
+        //Oppgave 4
+        System.out.println(computeSpotPrice(powerusage_day, powerprices_day));
+
+        // Oppgave 5
+
+        int teller = 0;
+        while (teller < powerprices_day.length ){
+            System.out.print("For time " + teller + ": ");
+            System.out.print(getSupport(powerusage_day[teller], powerprices_day[teller]));
+            teller += 1;
+            System.out.print(". ");
+        }
+        System.out.println();
+
+        //Oppgave 6
+        System.out.println(computePowerSupport(powerusage_day, powerprices_day));
+
+        //Oppgave 7
+        System.out.println(computeNorgesPrice(powerusage_day));
+
+        //Oppgave 8
+        System.out.println(findPeakUsage(powerusage_day));
+
+        //Oppgave 9
+        System.out.println(findAvgPower(powerusage_day));
+
+
+
 
         /*
         TODO

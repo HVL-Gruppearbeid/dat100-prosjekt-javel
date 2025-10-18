@@ -43,7 +43,7 @@ Implementer konstruktøren i klassen `Customers`:
 ```java
 public Customers(int size) 
 ```
-
+    
 som setter objekt-variablen `customers` til en tabell av lengde `size` som kan brukes til å lagre `Customer`-objekter.
 
 ### b) Telle antall kunder

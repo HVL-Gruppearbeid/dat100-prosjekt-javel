@@ -9,7 +9,8 @@ public class Customers {
     // a) Complete constructor
     public Customers(int size) {
 
-        // TODO
+       customers = new Customer[size];
+        System.out.println(customers.length);
 
     }
 
@@ -19,7 +20,11 @@ public class Customers {
 
         int count = 0;
 
-        // TODO
+        for(int i = 0; i < customers.length; i++){
+            if (customers[i] != null){
+                count += 1;
+            }
+        }
 
         return count;
     }
@@ -30,7 +35,13 @@ public class Customers {
         boolean funnet = false;
         Customer c = null;
 
-        // TODO
+        for(int i = 0; i < customers.length; i++){
+            if (customers[i] != null && customers[i].getCustomer_id() == customer_id){
+                funnet = true;
+                c = customers[i];
+                break;
+            }
+        }
 
         return c;
     }
@@ -40,7 +51,13 @@ public class Customers {
 
         boolean inserted = false;
 
-        // TODO
+        for(int i = 0; i < customers.length; i++){
+            if(customers[i] == null){
+                customers[i] = c;
+                inserted = true;
+                break;
+            }
+        }
 
         return inserted;
     }
@@ -51,7 +68,15 @@ public class Customers {
         boolean deleted = false;
         Customer c = null;
 
-        // TODO
+        for(int i = 0; i < customers.length; i++){
+            if (customers[i] != null && customers[i].getCustomer_id() == customer_id){
+
+                deleted = true;
+                c = customers[i];
+                customers[i] = null;
+                break;
+            }
+        }
 
         return c;
     }
@@ -59,10 +84,26 @@ public class Customers {
     // f) return reference table with all customers
     public Customer[] getCustomers() {
 
-        Customer[] customers = null;
+        Customer[] ny = null;
+        // lager en teller for å finne ut hvor mange aktive elementer det er i originalle tabellen
+        int count = 0;
+        for(int i = 0; i < customers.length; i++){
+            if (customers[i] != null){
+                count += 1;
+            }
+        }
 
-        // TODO
+        ny = new Customer[count];
+//      setter inn de existerende elementene inn i en ny og kortere tabell.
+        int teller = 0;
+        for(int i = 0; i < customers.length; i++){
+            if (customers[i] != null){
+                ny[teller] = customers[i];
+                teller += 1;
+            }
+        }
 
-        return customers;
+
+        return ny;
     }
 }
